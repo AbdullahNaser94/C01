@@ -1,32 +1,23 @@
-//#include <unistd.h>
+// #include <unistd.h>
 #include <stdio.h>
 
-void ft_rev_int_tab(int* tab, int size)
+int ft_strlen(char *str)
 {
-    int i;
-    int element;
+    unsigned int i;
 
     i = 0;
-    while (i < size / 2)
+    while (str[i] != '\0')
     {
-        element = tab[i];
-        tab[i] = tab[size - i - 1];
-        tab[size - i - 1] = element;
         i++;
     }
+    return i;
 }
 
 int main()
 {
-    int arr[] = { 1, 2, 3, 4, 5 };
-    int size;
-    
-    size = 5;
-    ft_rev_int_tab(arr, size);
-    for (int i = 0; i < size; i++)
-    {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+    char test_str[] = "Hello, world!";
+
+    printf("Length of the string : %d\n", ft_strlen(test_str));
+
     return 0;
 }
